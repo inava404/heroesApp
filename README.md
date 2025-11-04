@@ -1,27 +1,67 @@
-# HeroesApp
+# HeroesApp - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
+Aplicación web desarrollada con Angular 11 que permite gestionar un catálogo de superhéroes.  
+Incluye funcionalidades de búsqueda, edición, creación y eliminación de héroes, además de un backend simulado con **JSON-Server**.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Descripción del proyecto
 
-## Code scaffolding
+HeroesApp es una Single Page Application (SPA) que demuestra el uso de módulos, rutas, servicios, pipes y componentes en Angular.  
+La aplicación organiza los héroes por casa (DC o Marvel) y permite realizar operaciones CRUD mediante peticiones HTTP a un servidor local simulado.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## Tecnologías utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+|    Tecnología    |  Versión  |            Descripción           |
+|------------------|-----------|----------------------------------|
+| Angular          |    11.x   | Framework principal del proyecto |
+| TypeScript       |    4.x    | Lenguaje base del desarrollo     |
+| Angular Material |    11.x   | Diseño visual y componentes UI   |
+| Flex Layout      |    11.x   | Diseño responsive                |
+| JSON-Server      |    0.17.x | Simulación de backend REST       |
+| Node.js          |    14.x   | Entorno de ejecución necesario   |
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Instrucciones de instalación y ejecución
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### 1. Clonar el repositorio
 
-## Further help
+### 2. Instalar dependencias
+npm install
+OJO: Es importante tener la versión de angular 11, para ello, usaremos el comando 'npm install -g @angular/cli@11'
+Una vez hecho eso, necesitamos verificar la versión mediante el comando 'ng version'
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 3. Ejecutar la aplicación Angular
+ng serve -o
+
+Y la aplicación se ejcutará en: http://localhost:4200/
+
+---
+
+## Simulación del backend con JSON-Server
+
+### 1. Creamos otra carpeta en la misma ubicación donde se encuentre nuestra carpeta de heroesApp
+Esta carpeta se llamará "heroesService" y contendrá nuestro archivo db.json que contiene la base de datos local con los registros de héroes.
+
+### 2. Necesitamos instalar la versión del Json-Server que sea compatible
+npm install json-server@0.17.4 --save-dev
+En este caso, usé la versión 0.17.4 ya que es la que no me generaba conflictos.
+
+### 3. Iniciar el servidor
+npx json-server --watch db.json
+
+#### El backend estará disponible en:
+http://localhost:3000/heroes
+
+---
+
+## En este proyecto usamos lo siguiente:
+- Ruteo modular con carga perezosa (Lazy Loading)
+- CRUD completo de héroes
+- Filtros y pipes personalizados
+- Estilos con Angular Material y Flex Layout
+- Integración de JSON-Server como backend simulado
